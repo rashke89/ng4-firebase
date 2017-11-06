@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule} from '@angular/forms';
 
 // importing fs
 import { environment } from '../environments/environment';
@@ -11,16 +12,21 @@ import { ItemsComponent } from './components/items/items.component';
 
 // services / insert in providers
 import { ItemService } from "./services/item.service";
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AddTiemComponent } from './components/add-tiem/add-tiem.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemsComponent
+    ItemsComponent,
+    NavbarComponent,
+    AddTiemComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase, 'angularfs'),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FormsModule
   ],
   providers: [ItemService],
   bootstrap: [AppComponent]
